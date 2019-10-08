@@ -1,0 +1,78 @@
+Common:
+    threads: 4
+Tools:
+    # cadd:
+    #     tool_path: /home/dytk2134/tools/CADD_v1.3/bin
+    #     include: False
+    annovar:
+        tool_path: /home/dytk2134/project/github/varied_script/tools/annovar
+        humandb_path: /home/dytk2134/project/github/varied_script/tools/annovar/humandb
+        buildver: hg19
+        gene_based_annotation:
+            - ensGene
+        region_based_annotation:
+        filter_based_annotation:
+            - gnomad_exome
+            - gnomad_genome
+            - gerp++gt2
+            - clinvar_20190305
+        include: False
+
+Databases:
+    allele_freq:
+        1000Genome:
+            db_path: /home/dytk2134/db/1000Genomes/GRCh37
+            populations:
+                - EAS
+                - AMR
+                - AFR
+                - EUR
+                - SAS
+            include: False
+        1KJPN:
+            db_path: /home/dytk2134/db/IJGVD/1KJPN/GRCh37
+            populations:
+                - JPN
+            include: False
+        2KJPN:
+            db_path: /home/dytk2134/db/IJGVD/2KJPN/GRCh37
+            populations:
+                - JPN
+            include: False
+        ESP:
+            db_path: /home/dytk2134/db/ESP/GRCh37
+            populations:
+                - EA
+                - AA
+            include: False
+        ExAC:
+            db_path: /home/dytk2134/project/github/varied_script/db/ExAC
+            populations:
+                - AFR
+                - AMR
+                - EAS
+                - FIN
+                - NFE
+                - OTH
+                - SAS
+            include: True
+        TaiwanBiobank_NGS:
+            db_path: /home/dytk2134/project/github/varied_script/db/Taiwanbiobank/NGS
+            populations:
+                - TWN
+            include: True
+        TaiwanBiobank_GWG:
+            db_path: /home/dytk2134/project/github/varied_script/db/Taiwanbiobank/GWG
+            populations:
+                - TWN
+            include: True
+    annotation:
+        dbSNP:
+            db_path:
+            include: False
+        REVEL:
+            db_path:
+            include: False
+        ClinVar:
+            db_path:
+            include: False
