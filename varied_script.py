@@ -181,9 +181,8 @@ def main(input_files, config_file, output_dir):
             with open(input_file, 'r') as in_f:
                 count = 0
                 for line in in_f:
-                    line = line.strip()
-                    if line:
-                        tokens = line.split('\t')
+                    if line and line[0] != '#':
+                        tokens = list(map(str.strip, line.split('\t')))
                         chromosome = tokens[0].upper().replace('CHR', '')
                         chromosome_set.add(chromosome)
                         key = (chromosome, tokens[1], tokens[2], tokens[3])
@@ -230,7 +229,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=dedent("""\
 
     Quick start:
-    %(prog)s -in_b input.bigwig -regions region.txt -f genome.fasta -out_b output.bigwig
+    %(prog)s -i example/* -c varied.yaml
     """))
     # argument
     parser.add_argument('-i', '--input_files', nargs='+', help='Input tsv file')
